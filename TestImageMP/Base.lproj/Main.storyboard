@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="KAKViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hbI-cd-yeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ha-oH-khk"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YellowSquare.png" translatesAutoresizingMaskIntoConstraints="NO" id="iI9-ih-6gW">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OHA-7H-1us" appends="YES" id="Jky-f3-isb"/>
+                                    <outletCollection property="gestureRecognizers" destination="t5f-cO-dll" appends="YES" id="X6M-Xt-u4v"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="yelloBox" destination="iI9-ih-6gW" id="OV1-9p-TIl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="OHA-7H-1us">
+                    <connections>
+                        <action selector="scaleItem:" destination="vXZ-lx-hvc" id="OPY-kL-GMB"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="TBW-cw-qwB"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="2" id="t5f-cO-dll">
+                    <connections>
+                        <action selector="panItem:" destination="vXZ-lx-hvc" id="X0q-c5-q2x"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="BF0-41-3WZ"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="YellowSquare.png" width="100" height="100"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
